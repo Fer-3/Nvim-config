@@ -14,5 +14,5 @@ return {
     dependenices = {
       "mfussenegger/nvim-dap",
     }
-  }
+  },
 }
