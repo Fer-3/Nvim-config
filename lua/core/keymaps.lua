@@ -7,6 +7,7 @@ keymap("n", ",w", ":w<CR>", {})
 keymap("n", ".w", ":wq<CR>", {})
 keymap("n", ";", ":", {})
 keymap("n", "M", ":Mason<CR>", {})
+keymap("n", ",la", ":Lazy<CR>", {})
 keymap("n", "<leader>e", ":Neotree filesystem reveal float<CR>", {})
 
 -- Telescope

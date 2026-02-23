@@ -7,7 +7,8 @@ cmd("set shiftwidth=2")
 cmd("set number")
 cmd("set relativenumber")
 cmd.colorscheme "gruvbox"
-opt.completeopt = { "menuone", "noselect", "popup" }
-
+opt.shortmess:append "c"
 opt.cmdheight = 0
 vim.g.mapleader = " "
+
+cmd("set completeopt+=noselect")
