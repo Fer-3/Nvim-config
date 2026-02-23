@@ -1,4 +1,5 @@
 keymap = vim.keymap.set
+api = vim.api
 
 -- General keymaps
 keymap("n", "!q", ":q!<CR>", {})
@@ -35,3 +36,17 @@ keymap({ "n", "v" }, "f", function()
 		timeout_ms = 500,
 	})
 end, { desc = "Conform format" })
+
+-- Complier
+api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+api.nvim_set_keymap('n', '<S-F6>',
+     "<cmd>CompilerStop<cr>"
+  .. "<cmd>CompilerRedo<cr>",
+ { noremap = true, silent = true })
+api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
+-- Persistence
+keymap("n", "<leader>qs", function() require("persistence").load() end)
+keymap("n", "<leader>qS", function() require("persistence").select() end)
+keymap("n", "<leader>ql", function() require("persistence").load({ last = true }) end)
+keymap("n", "<leader>qd", function() require("persistence").stop() end)

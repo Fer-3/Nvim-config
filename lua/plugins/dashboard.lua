@@ -23,7 +23,7 @@ return {
 				header = vim.split(logo, "\n"),
 				center = {
 					{
-						action = "lua LazyVim.pick()()",
+						action = "Telescope find_files",
 						desc = " Find File",
 						icon = " ",
 						key = "f",
@@ -35,13 +35,13 @@ return {
 						key = "n",
 					},
 					{
-						action = 'lua LazyVim.pick("oldfiles")()',
+						action = "Telescope oldfiles",
 						desc = " Recent Files",
 						icon = " ",
 						key = "r",
 					},
 					{
-						action = 'lua LazyVim.pick("live_grep")()',
+						action = 'Telescope live_grep',
 						desc = " Find Text",
 						icon = " ",
 						key = "g",
@@ -57,12 +57,6 @@ return {
 						desc = " Restore Session",
 						icon = " ",
 						key = "s",
-					},
-					{
-						action = "LazyExtras",
-						desc = " Lazy Extras",
-						icon = " ",
-						key = "x",
 					},
 					{
 						action = "Lazy",
