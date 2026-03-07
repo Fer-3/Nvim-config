@@ -7,8 +7,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ast-grep"},
-        c = { "clangd", "ast-grep", stop_after_first = true},
-        cpp = { "clangd", "ast-grep", stop_after_first = true},
+        c = { "ast-grep", stop_after_first = true},
+        cpp = { "ast-grep", stop_after_first = true},
 				javascript = { "prettierd", "prettier", stop_after_first = true },
         java = { "google-java-format", "ast-grep", stop_after_first = true},
 			},

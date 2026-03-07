@@ -9,6 +9,8 @@ keymap("n", ".w", ":wq<CR>", {})
 keymap("n", ";", ":", {})
 keymap("n", "M", ":Mason<CR>", {})
 keymap("n", ",la", ":Lazy<CR>", {})
+keymap("n", ",n", ":noh<CR>", {})
+keymap({"n", "v"}, ",c", '"+y', {})
 keymap("n", "<leader>e", ":Neotree filesystem reveal float<CR>", {})
 
 -- Telescope
@@ -38,15 +40,25 @@ keymap({ "n", "v" }, "f", function()
 end, { desc = "Conform format" })
 
 -- Complier
-api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-api.nvim_set_keymap('n', '<S-F6>',
-     "<cmd>CompilerStop<cr>"
-  .. "<cmd>CompilerRedo<cr>",
- { noremap = true, silent = true })
-api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+api.nvim_set_keymap("n", "<F6>", "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+api.nvim_set_keymap(
+	"n",
+	"<S-F6>",
+	"<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>",
+	{ noremap = true, silent = true }
+)
+api.nvim_set_keymap("n", "<S-F7>", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 -- Persistence
-keymap("n", "<leader>qs", function() require("persistence").load() end)
-keymap("n", "<leader>qS", function() require("persistence").select() end)
-keymap("n", "<leader>ql", function() require("persistence").load({ last = true }) end)
-keymap("n", "<leader>qd", function() require("persistence").stop() end)
+keymap("n", "<leader>qs", function()
+	require("persistence").load()
+end)
+keymap("n", "<leader>qS", function()
+	require("persistence").select()
+end)
+keymap("n", "<leader>ql", function()
+	require("persistence").load({ last = true })
+end)
+keymap("n", "<leader>qd", function()
+	require("persistence").stop()
+end)
